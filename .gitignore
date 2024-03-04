@@ -9,4 +9,5 @@
 !*.cfg
 
 # and the start up code
-!/start-up/**
+!start-up
+!start-up/**
