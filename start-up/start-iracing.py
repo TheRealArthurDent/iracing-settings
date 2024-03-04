@@ -13,19 +13,9 @@ def chooseBranch():
 
     repo.remote().fetch()
 
-    branch_names = []
-    for r in repo.branches:
-        branch_names.append(r.name)
-
-    #branch_names.append('IVRA')
-    #branch_names.append('Something')
-    #print(branch_names)
-
-    if len(branch_names) > 1:
-        option = pick(branch_names, 'Pick a configuration')
-        print(option)
-
-        # TODO switch to branch
+    if len(repo.branches) > 1:
+        option, index = pick(repo.branches, 'Pick a configuration')
+        repo.branches[index].checkout()
 
     print(f'Using configuration {repo.active_branch}')
 
