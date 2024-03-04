@@ -1,0 +1,12 @@
+# Ignore everything
+*
+!.gitignore
+
+# except iracing's setting files
+!*.ini
+!*.yml
+!*.yaml
+!*.cfg
+
+# and the start up code
+!/start-up/**
