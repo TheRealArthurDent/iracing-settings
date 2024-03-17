@@ -2,7 +2,7 @@
 CalibrationInfo:
  DeviceList:
  - DeviceName: 'GSI Hyper P1 - simOS'
-   InstanceGUID: '{666519A0-060C-11EE-8001-444553540000}'
+   InstanceGUID: '{B2F52B00-E45C-11EE-8001-444553540000}'
    AxisList:
    - Axis: 2
      AxisName: 'Z-Achse'
@@ -10,21 +10,16 @@ CalibrationInfo:
      CalibCenter: 0
      CalibMax: 65535
  - DeviceName: 'Simucube 2 Pro'
-   InstanceGUID: '{4AC04C60-5C57-11ED-8006-444553540000}'
+   InstanceGUID: '{A4E95DF0-D981-11EE-8001-444553540000}'
    AxisList:
    - Axis: 0
      AxisName: 'X-Achse'
      CalibMin: 0
-     CalibCenter: 32761
+     CalibCenter: 32752
      CalibMax: 65535
  - DeviceName: 'Heusinkveld Sim Pedals Sprint'
-   InstanceGUID: '{4ABF13E0-5C57-11ED-8004-444553540000}'
+   InstanceGUID: '{A4EA6F60-D981-11EE-8004-444553540000}'
    AxisList:
-   - Axis: 0
-     AxisName: 'Z-Rotation'
-     CalibMin: 0
-     CalibCenter: 0
-     CalibMax: 4095
    - Axis: 1
      AxisName: 'Y-Rotation'
      CalibMin: 0
