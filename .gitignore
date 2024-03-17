@@ -3,10 +3,10 @@
 !.gitignore
 
 # except iracing's setting files
-!*.ini
-!*.yml
-!*.yaml
-!*.cfg
+!app.ini
+!core.ini
+!joyCalib.yaml
+!controls.cfg
 
 # and the start up code
 !start-up
