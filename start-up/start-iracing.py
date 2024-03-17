@@ -70,12 +70,10 @@ def ensure_software_running(software, indentation: str = ''):
         else:
             print_colored(f'{indentation}  Starting {Fore.BLUE}{name}')
         exe = software['executable']
-        working_dir = software['workingDir']
-        #os.system(software['executable'])
-        print(f'-------->Starting {working_dir} - {exe}')
-        subprocess.Popen(exe, stdout=subprocess.DEVNULL, cwd=working_dir)
-    if 'killOnExit' in software:
-        if(software['killOnExit']):
+        working_dir = software['directory']
+        subprocess.Popen(f'{working_dir}/{exe}', stdout=subprocess.DEVNULL, cwd=working_dir)
+    if 'kill' in software:
+        if(software['kill']):
             print_colored(f'{indentation}  {Fore.BLUE}{name}{Fore.RESET} will be stopped if iRacing terminates.')
             kill_on_exit.append(software)
     if 'dependents' in software:
@@ -144,4 +142,3 @@ suppress_software()
 check_and_start_supporting_software()
 start_iracing()
 monitor_iracing_process()
-

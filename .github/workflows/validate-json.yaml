@@ -1,0 +1,21 @@
+name: Validate JSON
+
+on:
+    push:
+
+permissions:
+    contents: read
+
+jobs:
+    validate-json:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v4
+
+        - name: json-yaml-validate
+          uses: GrantBirki/json-yaml-validate@v2.6.1
+          with:
+            files: start-up/software.json
+            json_schema: start-up/schemas/software.json
+            json_schema_version: draft-2020-12
+            use_gitignore: false

@@ -1,51 +1,52 @@
 {
-    "iracing": {
-        "name": "iracing UI",
-        "executable": "iRacingUI.exe",
-		"workingDir": "C:/Program Files (x86)/iRacing/ui"
+  "iracing": {
+    "name": "iracing UI",
+    "executable": "iRacingUI.exe",
+    "directory": "C:/Program Files (x86)/iRacing/ui",
+    "delaySeconds": 1
+  },
+  "supporting": [
+    {
+      "name": "SimHub",
+      "executable": "SimHubWPF.exe",
+      "directory": "C:/Program Files (x86)/SimHub"
     },
-    "supporting": [
+    {
+      "name": "Simucube True Drive",
+      "executable": "Simucube 2 True Drive Paddock.exe",
+      "directory": "C:/Program Files/Simucube 2 True Drive/Simucube 2 True Drive Paddock.exe"
+    },
+    {
+      "name": "Trading Paints",
+      "executable": "Trading Paints.exe",
+      "directory": "C:/Program Files (x86)/Rhinode LLC/Trading Paints",
+      "kill": true
+    },
+    {
+      "name": "CrewChief",
+      "executable": "CrewChiefV4.exe",
+      "directory": "C:/Program Files (x86)/Britton IT Ltd/CrewChiefV4",
+      "kill": true
+    },
+    {
+      "name": "JRT Server",
+      "executable": "Timing.exe",
+      "directory": "C:/Joel Real Timing - no CUDA",
+      "dependents": [
         {
-            "name": "SimHub",
-            "executable": "SimHubWPF.exe",
-            "workingDir": "C:\\Program Files (x86)\\SimHub"
-        },
-        {
-            "name": "Simucube True Drive",
-            "executable": "Simucube 2 True Drive Paddock.exe",
-            "workingDir": "C:/Program Files/Simucube 2 True Drive/Simucube 2 True Drive Paddock.exe"
-        },
-        {
-            "name": "Trading Paints",
-            "executable": "Trading Paints.exe",
-            "workingDir": "C:/Program Files (x86)/Rhinode LLC/Trading Paints",
-            "killOnExit": true
-        },
-        {
-            "name": "CrewChief",
-            "executable": "CrewChiefV4.exe",
-            "workingDir": "C:/Program Files (x86)/Britton IT Ltd/CrewChiefV4",
-            "killOnExit": true
-        },
-        {
-            "name": "JRT Server",
-            "executable": "Timing.exe",
-            "workingDir": "C:/Joel Real Timing - no CUDA",
-            "dependents": [
-                {
-                    "delaySeconds": 5,
-                    "name": "JRT Overlays",
-                    "executable": "electron-overlays.exe",
-                    "workingDir": "C:/Joel Real Timing - no CUDA/Electron-Overlays"
-                }
-            ]
-        },
-		{
-            "name": "Garage61 Agent",
-            "workingDir": "%APPDATA%/garage61-install/",
-            "executable": "garage61-launcher.exe"
-		}
-    ],
-    "suppress": [
-    ]
+          "delaySeconds": 5,
+          "name": "JRT Overlays",
+          "executable": "electron-overlays.exe",
+          "directory": "C:/Joel Real Timing - no CUDA/Electron-Overlays"
+        }
+      ]
+    },
+  {
+    "name": "Garage61 Agent",
+    "executable": "garage61-launcher.exe",
+    "directory": "%APPDATA%/garage61-install/"
+  }
+  ],
+  "suppress": [
+  ]
 }
