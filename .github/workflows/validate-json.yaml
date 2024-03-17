@@ -17,3 +17,5 @@ jobs:
           with:
             files: start-up/software.json
             json_schema: start-up/schemas/software.json
+            json_schema_version: draft-2020-12
+            use_gitignore: false
