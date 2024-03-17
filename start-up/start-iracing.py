@@ -37,7 +37,7 @@ def choose_branch():
 def suppress_software():
     to_suppress = get_software_config()['suppress']
     for software in to_suppress:
-        task_name = software['taskName']
+        task_name = software['executable']
         print(f'Checking if {task_name} is running.')
         running_processes = get_processes(task_name)
         if (running_processes):
@@ -58,7 +58,7 @@ def suppress_software():
 
 def ensure_software_running(software, indentation: str = ''):
     name = software['name']
-    task_name = software['taskName']
+    task_name = software['executable']
     print_colored(f'{indentation}Ensuring {Fore.BLUE}{name}', Fore.GREEN)
     if (get_processes(task_name)):
         print(f'{indentation}  {Fore.BLUE}{name}{Fore.RESET} is already running')
@@ -70,10 +70,10 @@ def ensure_software_running(software, indentation: str = ''):
         else:
             print_colored(f'{indentation}  Starting {Fore.BLUE}{name}')
         exe = software['executable']
-        #os.system(software['executable'])
-        subprocess.Popen(exe, stdout=subprocess.DEVNULL)
-    if 'killOnExit' in software:
-        if(software['killOnExit']):
+        working_dir = software['directory']
+        subprocess.Popen(f'{working_dir}/{exe}', stdout=subprocess.DEVNULL, cwd=working_dir)
+    if 'kill' in software:
+        if(software['kill']):
             print_colored(f'{indentation}  {Fore.BLUE}{name}{Fore.RESET} will be stopped if iRacing terminates.')
             kill_on_exit.append(software)
     if 'dependents' in software:
@@ -95,7 +95,7 @@ def monitor_iracing_process():
     if(len(kill_on_exit) > 0):
         iracing = get_software_config()['iracing']
         name = iracing['name']
-        task_name = iracing['taskName']
+        task_name = iracing['executable']
         print_colored(f'Monitoring {Fore.BLUE}{name}', Fore.GREEN)
         while len(get_processes(task_name)) > 0:
             time.sleep(3)
@@ -105,7 +105,7 @@ def monitor_iracing_process():
 def kill_processes(to_kill_list):
     for to_kill in to_kill_list:
         name = to_kill['name']
-        task_name = to_kill['taskName']
+        task_name = to_kill['executable']
         print_colored(f'  Stopping {Fore.BLUE}{name}', Fore.RED)
         # TODO really stop
         running_processes = get_processes(task_name)
@@ -142,4 +142,3 @@ suppress_software()
 check_and_start_supporting_software()
 start_iracing()
 monitor_iracing_process()
-
