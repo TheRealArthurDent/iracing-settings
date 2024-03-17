@@ -1,54 +1,51 @@
 {
     "iracing": {
         "name": "iracing UI",
-        "executable": "C:/Program Files (x86)/iRacing/ui/iRacingUI.exe",
-        "taskName": "iRacingUI.exe",
-        "delaySeconds": 1
+        "executable": "iRacingUI.exe",
+		"workingDir": "C:/Program Files (x86)/iRacing/ui"
     },
     "supporting": [
         {
-            "name": "Chrome",
-            "taskName": "chrome.exe",
-            "executable": "doesnotmatter.exe",
-            "dependents": [
-                {
-                    "name": "Notepad++",
-                    "executable": "C:/Program Files/Notepad++/notepad++.exe",
-                    "taskName": "notepad++.exe"
-                }
-            ]
+            "name": "SimHub",
+            "executable": "SimHubWPF.exe",
+            "workingDir": "C:\\Program Files (x86)\\SimHub"
+        },
+        {
+            "name": "Simucube True Drive",
+            "executable": "Simucube 2 True Drive Paddock.exe",
+            "workingDir": "C:/Program Files/Simucube 2 True Drive/Simucube 2 True Drive Paddock.exe"
+        },
+        {
+            "name": "Trading Paints",
+            "executable": "Trading Paints.exe",
+            "workingDir": "C:/Program Files (x86)/Rhinode LLC/Trading Paints",
+            "killOnExit": true
         },
         {
             "name": "CrewChief",
-            "executable": "C:/Program Files/Notepad++/notepad++.exe",
-            "taskName": "notepad++.exe",
+            "executable": "CrewChiefV4.exe",
+            "workingDir": "C:/Program Files (x86)/Britton IT Ltd/CrewChiefV4",
             "killOnExit": true
         },
         {
             "name": "JRT Server",
-            "executable": "C:/some/folder/JRT.exe",
-            "taskName": "wsl.exe",
+            "executable": "Timing.exe",
+            "workingDir": "C:/Joel Real Timing - no CUDA",
             "dependents": [
                 {
+                    "delaySeconds": 5,
                     "name": "JRT Overlays",
-                    "executable": "C:/some/folder/JRT-overlays.exe",
-                    "taskName": "wsl.exe",
-                    "delaySeconds": 5
+                    "executable": "electron-overlays.exe",
+                    "workingDir": "C:/Joel Real Timing - no CUDA/Electron-Overlays"
                 }
             ]
-        }
-
+        },
+		{
+            "name": "Garage61 Agent",
+            "workingDir": "%APPDATA%/garage61-install/",
+            "executable": "garage61-launcher.exe"
+		}
     ],
     "suppress": [
-        {
-            "name": "WSL2",
-            "taskName": "wsl.exe",
-            "kill": false
-        },
-        {
-            "name": "Trading Paints",
-            "taskName": "Trading Paints.exe",
-            "kill": true
-        }
     ]
 }
