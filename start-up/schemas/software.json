@@ -38,7 +38,6 @@
       "type": "array",
       "items": {
         "type": "object",
-        "$anchor": "SupportingSoftware",
         "required": [
           "name",
           "executable",
@@ -65,7 +64,43 @@
             "description": "An optional list of software that depends on this software",
             "type": "array",
             "items": {
-              "$ref": "#SupportingSoftware"
+              "type": "object",
+              "description": "Recursion would be great, but jsonSchema is stupid.",
+              "required": [
+                "name",
+                "executable",
+                "directory"
+              ],
+              "properties": {
+                "name": {
+                  "description": "The name of the software.",
+                  "type": "string"
+                },
+                "executable": {
+                  "description": "The name of the executable file including the extension",
+                  "type": "string"
+                },
+                "directory": {
+                  "description": "The folder the executable resides in and should be executed.",
+                  "type": "string"
+                },
+                "delaySeconds": {
+                  "description": "An optional amount of seconds, the process should wait before starting the software. E.g. to wait for another supporting software, that this software depends on, to start.",
+                  "type": "integer"
+                },
+                "dependents": {
+                  "description": "An optional list of software that depends on this software",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "description": "Recursion would be great, but jsonSchema is stupid."
+                  }
+                },
+                "kill": {
+                  "description": "Whether the process should be killed after iracing has been closed. Default: false",
+                  "type": "boolean"
+                }
+              }
             }
           },
           "kill": {

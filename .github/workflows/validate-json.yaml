@@ -15,5 +15,7 @@ jobs:
         - name: json-yaml-validate
           uses: GrantBirki/json-yaml-validate@v2.6.1
           with:
-            files: software.json
-            json_schema: schemas/software.json
+            files: start-up/software.json
+            json_schema: start-up/schemas/software.json
+            json_schema_version: draft-2020-12
+            use_gitignore: false

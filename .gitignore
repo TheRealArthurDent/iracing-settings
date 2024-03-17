@@ -8,6 +8,10 @@
 !*.yaml
 !*.cfg
 
+# GitHub
+!.github
+!.github/**
+
 # and the start up code
 !start-up
 !start-up/**
