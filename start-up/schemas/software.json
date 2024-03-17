@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "iracing",
+  "title": "iracing-support",
+  "description": "Any software, be it iracing itself, software that runs along with iracing or software that must not run along iracing.",
+  "type": "object",
+  "required": ["iracing"],
+  "properties": {
+    "iracing": {
+      "description": "iracing's UI",
+      "type": "object",
+      "required": [
+        "name",
+        "executable",
+        "directory"
+      ],
+      "properties": {
+        "name": {
+          "description": "The name of the software.",
+          "type": "string"
+        },
+        "executable": {
+          "description": "The name of the executable file including the extension",
+          "type": "string"
+        },
+        "directory": {
+          "description": "The folder the executable resides in and should be executed.",
+          "type": "string"
+        },
+        "delaySeconds": {
+          "description": "An optional amount of seconds, the process should wait before starting the software. E.g. to wait for a supporting software to start.",
+          "type": "integer"
+        }
+      }
+    },
+    "supporting": {
+      "description": "Any software that should run alongside iracing",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$anchor": "SupportingSoftware",
+        "required": [
+          "name",
+          "executable",
+          "directory"
+        ],
+        "properties": {
+          "name": {
+            "description": "The name of the software.",
+            "type": "string"
+          },
+          "executable": {
+            "description": "The name of the executable file including the extension",
+            "type": "string"
+          },
+          "directory": {
+            "description": "The folder the executable resides in and should be executed.",
+            "type": "string"
+          },
+          "delaySeconds": {
+            "description": "An optional amount of seconds, the process should wait before starting the software. E.g. to wait for another supporting software, that this software depends on, to start.",
+            "type": "integer"
+          },
+          "dependents": {
+            "description": "An optional list of software that depends on this software",
+            "type": "array",
+            "items": {
+              "$ref": "#SupportingSoftware"
+            }
+          },
+          "kill": {
+            "description": "Whether the process should be killed after iracing has been closed. Default: false",
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "suppress": {
+      "description": "Every software that should be stopped when running iracing.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "executable"
+        ],
+        "properties": {
+          "name": {
+            "description": "The name of the software.",
+            "type": "string"
+          },
+          "executable": {
+            "description": "The name of the executable file including the extension",
+            "type": "string"
+          },
+          "kill": {
+            "description": "Whether the process should be killed or just a notification posted to stop it. Default: false",
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}
