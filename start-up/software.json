@@ -1,0 +1,48 @@
+{
+  "iracing": {
+    "name": "iracing UI",
+    "executable": "iRacingUI.exe",
+    "directory": "C:/Program Files (x86)/iRacing/ui",
+    "delaySeconds": 1
+  },
+  "supporting": [
+    {
+      "name": "SimHub",
+      "executable": "SimHubWPF.exe",
+      "directory": "C:/Program Files (x86)/SimHub",
+      "kill": true,
+      "dependents": [
+        {
+          "name": "Trading Paints",
+          "executable": "Trading Paints.exe",
+          "directory": "C:/Program Files (x86)/Rhinode LLC/Trading Paints"
+        }
+      ]
+    },
+    {
+      "name": "JRT Server",
+      "executable": "wsl.exe",
+      "directory": "C:/tmp",
+      "dependents": [
+        {
+          "name": "JRT Overlays",
+          "executable": "wsl.exe",
+          "directory": "wsl.exe",
+          "delaySeconds": 5
+        }
+      ]
+    }
+  ],
+  "suppress": [
+    {
+      "name": "WSL2",
+      "executable": "wsl.exe",
+      "kill": false
+    },
+    {
+      "name": "Trading Paints",
+      "executable": "Trading Paints.exe",
+      "kill": true
+    }
+  ]
+}
