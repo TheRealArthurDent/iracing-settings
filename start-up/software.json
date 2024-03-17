@@ -1,0 +1,54 @@
+{
+    "iracing": {
+        "name": "iracing UI",
+        "executable": "C:/Program Files (x86)/iRacing/ui/iRacingUI.exe",
+        "taskName": "iRacingUI.exe",
+        "delaySeconds": 1
+    },
+    "supporting": [
+        {
+            "name": "Chrome",
+            "taskName": "chrome.exe",
+            "executable": "doesnotmatter.exe",
+            "dependents": [
+                {
+                    "name": "Notepad++",
+                    "executable": "C:/Program Files/Notepad++/notepad++.exe",
+                    "taskName": "notepad++.exe"
+                }
+            ]
+        },
+        {
+            "name": "CrewChief",
+            "executable": "C:/Program Files/Notepad++/notepad++.exe",
+            "taskName": "notepad++.exe",
+            "killOnExit": true
+        },
+        {
+            "name": "JRT Server",
+            "executable": "C:/some/folder/JRT.exe",
+            "taskName": "wsl.exe",
+            "dependents": [
+                {
+                    "name": "JRT Overlays",
+                    "executable": "C:/some/folder/JRT-overlays.exe",
+                    "taskName": "wsl.exe",
+                    "delaySeconds": 5
+                }
+            ]
+        }
+
+    ],
+    "suppress": [
+        {
+            "name": "WSL2",
+            "taskName": "wsl.exe",
+            "kill": false
+        },
+        {
+            "name": "Trading Paints",
+            "taskName": "Trading Paints.exe",
+            "kill": true
+        }
+    ]
+}
