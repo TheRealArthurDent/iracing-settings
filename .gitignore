@@ -12,6 +12,9 @@
 !.github
 !.github/**
 
-# and the start up code
+# The start up code
 !start-up
 !start-up/**
+
+# Renovate
+!renovate.json
