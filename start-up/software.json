@@ -14,7 +14,7 @@
     {
       "name": "Simucube True Drive",
       "executable": "Simucube 2 True Drive Paddock.exe",
-      "directory": "C:/Program Files/Simucube 2 True Drive/Simucube 2 True Drive Paddock.exe"
+      "directory": "C:/Program Files/Simucube 2 True Drive"
     },
     {
       "name": "Trading Paints",
@@ -32,12 +32,14 @@
       "name": "JRT Server",
       "executable": "Timing.exe",
       "directory": "C:/Joel Real Timing - no CUDA",
+      "kill": true,
       "dependents": [
         {
           "delaySeconds": 5,
           "name": "JRT Overlays",
           "executable": "electron-overlays.exe",
-          "directory": "C:/Joel Real Timing - no CUDA/Electron-Overlays"
+          "directory": "C:/Joel Real Timing - no CUDA/Electron-Overlays",
+          "kill": true
         }
       ]
     },
