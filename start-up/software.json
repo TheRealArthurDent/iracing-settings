@@ -9,40 +9,46 @@
     {
       "name": "SimHub",
       "executable": "SimHubWPF.exe",
-      "directory": "C:/Program Files (x86)/SimHub",
-      "kill": true,
-      "dependents": [
-        {
-          "name": "Trading Paints",
-          "executable": "Trading Paints.exe",
-          "directory": "C:/Program Files (x86)/Rhinode LLC/Trading Paints"
-        }
-      ]
+      "directory": "C:/Program Files (x86)/SimHub"
     },
     {
-      "name": "JRT Server",
-      "executable": "wsl.exe",
-      "directory": "C:/tmp",
-      "dependents": [
-        {
-          "name": "JRT Overlays",
-          "executable": "wsl.exe",
-          "directory": "wsl.exe",
-          "delaySeconds": 5
-        }
-      ]
-    }
-  ],
-  "suppress": [
-    {
-      "name": "WSL2",
-      "executable": "wsl.exe",
-      "kill": false
+      "name": "Simucube True Drive",
+      "executable": "Simucube 2 True Drive Paddock.exe",
+      "directory": "C:/Program Files/Simucube 2 True Drive"
     },
     {
       "name": "Trading Paints",
       "executable": "Trading Paints.exe",
+      "directory": "C:/Program Files (x86)/Rhinode LLC/Trading Paints",
       "kill": true
-    }
+    },
+    {
+      "name": "CrewChief",
+      "executable": "CrewChiefV4.exe",
+      "directory": "C:/Program Files (x86)/Britton IT Ltd/CrewChiefV4",
+      "kill": true
+    },
+    {
+      "name": "JRT Server",
+      "executable": "Timing.exe",
+      "directory": "C:/Joel Real Timing - no CUDA",
+      "kill": true,
+      "dependents": [
+        {
+          "delaySeconds": 5,
+          "name": "JRT Overlays",
+          "executable": "electron-overlays.exe",
+          "directory": "C:/Joel Real Timing - no CUDA/Electron-Overlays",
+          "kill": true
+        }
+      ]
+    },
+  {
+    "name": "Garage61 Agent",
+    "executable": "garage61-launcher.exe",
+    "directory": "%APPDATA%/garage61-install/"
+  }
+  ],
+  "suppress": [
   ]
 }
