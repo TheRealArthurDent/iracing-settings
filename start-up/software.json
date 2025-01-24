@@ -42,12 +42,7 @@
           "kill": true
         }
       ]
-    },
-  {
-    "name": "Garage61 Agent",
-    "executable": "garage61-launcher.exe",
-    "directory": "%APPDATA%/garage61-install/"
-  }
+    }
   ],
   "suppress": [
   ]

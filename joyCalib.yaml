@@ -15,11 +15,16 @@ CalibrationInfo:
    - Axis: 0
      AxisName: 'X-Achse'
      CalibMin: 0
-     CalibCenter: 32767
+     CalibCenter: 32633
      CalibMax: 65535
  - DeviceName: 'Heusinkveld Sim Pedals Sprint'
    InstanceGUID: '{A4EA6F60-D981-11EE-8004-444553540000}'
    AxisList:
+   - Axis: 0
+     AxisName: 'Z-Rotation'
+     CalibMin: 0
+     CalibCenter: 0
+     CalibMax: 4095
    - Axis: 1
      AxisName: 'Y-Rotation'
      CalibMin: 0
