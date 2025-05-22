@@ -12,9 +12,9 @@
       "directory": "C:/Program Files (x86)/SimHub"
     },
     {
-      "name": "Simucube True Drive",
-      "executable": "Simucube 2 True Drive Paddock.exe",
-      "directory": "C:/Program Files/Simucube 2 True Drive"
+      "name": "Simucube Tuner",
+      "executable": "sc-tuner.exe",
+      "directory": "C:/Program Files/SimucubeTuner"
     },
     {
       "name": "Trading Paints",
